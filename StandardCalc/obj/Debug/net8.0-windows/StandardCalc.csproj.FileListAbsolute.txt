@@ -1,0 +1,17 @@
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\bin\Debug\net8.0-windows\StandardCalc.exe
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\bin\Debug\net8.0-windows\StandardCalc.deps.json
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\bin\Debug\net8.0-windows\StandardCalc.runtimeconfig.json
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\bin\Debug\net8.0-windows\StandardCalc.dll
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\bin\Debug\net8.0-windows\StandardCalc.pdb
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalculator.Form1.resources
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.Properties.Resources.resources
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.csproj.GenerateResource.cache
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.AssemblyInfoInputs.cache
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.AssemblyInfo.cs
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.csproj.CoreCompileInputs.cache
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.dll
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\refint\StandardCalc.dll
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.pdb
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\StandardCalc.genruntimeconfig.cache
+C:\Users\WINDOW 10 PRO\source\repos\StandardCalc\StandardCalc\obj\Debug\net8.0-windows\ref\StandardCalc.dll
