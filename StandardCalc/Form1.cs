@@ -1,4 +1,4 @@
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace StandardCalculator
 {
@@ -7,12 +7,12 @@ namespace StandardCalculator
         string firstNumber = "";
         string secondNumber = "";
         bool secondNumAdd = false;
-        string currentOperation = null;
+        string currentOperation = "";
         List<string> expression = new List<string>();
         bool isOperatorClicked = false;
         bool isClearClicked = false;
-
-
+        bool historyVisible = true;
+        private Queue<string> entries = new Queue<string>();
         public Form1()
         {
             InitializeComponent();
@@ -36,12 +36,14 @@ namespace StandardCalculator
 
 
 
+
+
         private void btnClr_Click(object sender, EventArgs e)
         {
             disp.Text = "";
             firstNumber = "";
             secondNumber = "";
-            currentOperation = null;
+            currentOperation = "";
             expression = [];
             isOperatorClicked = false;
             secondNumAdd = false;
@@ -50,7 +52,7 @@ namespace StandardCalculator
 
         private void initBtn(Button btn, string fieldName)
         {
-             ;
+            ;
             string num = fieldName;
             if (isOperatorClicked)
             {
@@ -95,7 +97,7 @@ namespace StandardCalculator
 
         private void initOps(Button btn, string operand)
         {
-             
+
             string operation = btn.Text;
             string lastChar = disp.Text.Length > 0
         ? disp.Text.Substring(disp.Text.Length - 1)
@@ -127,9 +129,10 @@ namespace StandardCalculator
 
         }
 
+
         private void calculate()
         {
-             
+
             if (expression.Count < 3)
             {
                 return;
@@ -175,12 +178,17 @@ namespace StandardCalculator
                 disp.Text = result.ToString();
                 firstNumber = result.ToString();
                 secondNumber = "";
-                currentOperation = null;
+                string entry = $"{first} {operation} {second} = {result}";
+                addHistory(entry);
+                currentOperation = "";
                 expression.Clear();
                 expression.Add(result.ToString());
                 secondNumAdd = false;
+
             }
         }
+        //Getter-setter for Result to be used in recent entries
+
 
         private void btn7_Click(object sender, EventArgs e)
         {
@@ -311,30 +319,69 @@ namespace StandardCalculator
 
         private void btnSqr_Click(object sender, EventArgs e)
         {
-             ;
 
             if (double.TryParse(disp.Text, out double value))
             {
+                double oldValue = value;
                 value = value * value;
+                string entry = $"sqr({oldValue}) = {value}";
+                addHistory(entry);
                 disp.Text = value.ToString();
                 firstNumber = disp.Text;
                 secondNumber = "";
+
             }
         }
 
         private void btnSqrt_Click(object sender, EventArgs e)
         {
-             
-
             if (double.TryParse(disp.Text, out double value) && value >= 0)
             {
+                double oldValue = value;
                 value = Math.Sqrt(value);
+                string entry = $"√({oldValue}) = {value}";
+
+                addHistory(entry);
                 disp.Text = value.ToString();
                 firstNumber = disp.Text;
                 secondNumber = "";
             }
         }
+        //LIFO stack; Latest Entry first, Oldest Entry out.
+        private void addHistory(string entry)
+        {
+            if (entries.Count >= 10)
+                entries.Dequeue(); // removes oldest
+            entries.Enqueue(entry);
 
-      
+            // ListBox updater
+            boxHis.Items.Clear();
+            foreach (var item in entries.Reverse()) // makes listbox displays newest items on top
+            {
+                boxHis.Items.Add(item);
+            }
+        }
+
+        private void boxHis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //When user clicks specific equation, displays the expression
+            disp.Text = boxHis.SelectedItem.ToString().Split('=')[0].Trim();
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            if (!historyVisible)
+            {
+                this.Width = 811; 
+                boxHis.Visible = true;
+                historyVisible = true;
+            }
+            else
+            {
+                this.Width = 490; 
+                boxHis.Visible = false;
+                historyVisible = false;
+            }
+        }
     }
 }

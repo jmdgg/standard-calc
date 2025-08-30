@@ -30,8 +30,6 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             btnSqrt = new Button();
-            btnSqr = new Button();
-            btnMod = new Button();
             btn3 = new Button();
             btn2 = new Button();
             btn1 = new Button();
@@ -44,6 +42,8 @@
             btnSub = new Button();
             btnAdd = new Button();
             btnMult = new Button();
+            btnMod = new Button();
+            btnSqr = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             btnSgnChg = new Button();
             btn0 = new Button();
@@ -54,6 +54,8 @@
             btnClr = new Button();
             btnDiv = new Button();
             disp = new TextBox();
+            boxHis = new ListBox();
+            btnHide = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -106,36 +108,6 @@
             btnSqrt.Text = "√𝑥";
             btnSqrt.UseVisualStyleBackColor = false;
             btnSqrt.Click += btnSqrt_Click;
-            // 
-            // btnSqr
-            // 
-            btnSqr.BackColor = Color.AliceBlue;
-            btnSqr.FlatAppearance.BorderSize = 0;
-            btnSqr.FlatStyle = FlatStyle.Flat;
-            btnSqr.Font = new Font("Segoe UI Light", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSqr.ForeColor = SystemColors.ActiveCaptionText;
-            btnSqr.Location = new Point(270, 99);
-            btnSqr.Name = "btnSqr";
-            btnSqr.Size = new Size(83, 90);
-            btnSqr.TabIndex = 14;
-            btnSqr.Text = "𝑥²";
-            btnSqr.UseVisualStyleBackColor = false;
-            btnSqr.Click += btnSqr_Click;
-            // 
-            // btnMod
-            // 
-            btnMod.BackColor = Color.AliceBlue;
-            btnMod.FlatAppearance.BorderSize = 0;
-            btnMod.FlatStyle = FlatStyle.Flat;
-            btnMod.Font = new Font("Segoe UI Light", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMod.ForeColor = SystemColors.ActiveCaptionText;
-            btnMod.Location = new Point(270, 3);
-            btnMod.Name = "btnMod";
-            btnMod.Size = new Size(83, 90);
-            btnMod.TabIndex = 5;
-            btnMod.Text = "%";
-            btnMod.UseVisualStyleBackColor = false;
-            btnMod.Click += btnMod_Click;
             // 
             // btn3
             // 
@@ -317,6 +289,36 @@
             btnMult.UseVisualStyleBackColor = false;
             btnMult.Click += btnMult_Click;
             // 
+            // btnMod
+            // 
+            btnMod.BackColor = Color.AliceBlue;
+            btnMod.FlatAppearance.BorderSize = 0;
+            btnMod.FlatStyle = FlatStyle.Flat;
+            btnMod.Font = new Font("Segoe UI Light", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMod.ForeColor = SystemColors.ActiveCaptionText;
+            btnMod.Location = new Point(270, 3);
+            btnMod.Name = "btnMod";
+            btnMod.Size = new Size(83, 90);
+            btnMod.TabIndex = 5;
+            btnMod.Text = "%";
+            btnMod.UseVisualStyleBackColor = false;
+            btnMod.Click += btnMod_Click;
+            // 
+            // btnSqr
+            // 
+            btnSqr.BackColor = Color.AliceBlue;
+            btnSqr.FlatAppearance.BorderSize = 0;
+            btnSqr.FlatStyle = FlatStyle.Flat;
+            btnSqr.Font = new Font("Segoe UI Light", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSqr.ForeColor = SystemColors.ActiveCaptionText;
+            btnSqr.Location = new Point(270, 99);
+            btnSqr.Name = "btnSqr";
+            btnSqr.Size = new Size(83, 90);
+            btnSqr.TabIndex = 14;
+            btnSqr.Text = "𝑥²";
+            btnSqr.UseVisualStyleBackColor = false;
+            btnSqr.Click += btnSqr_Click;
+            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.BackColor = Color.Silver;
@@ -471,12 +473,36 @@
             disp.Size = new Size(448, 96);
             disp.TabIndex = 3;
             // 
+            // boxHis
+            // 
+            boxHis.Font = new Font("Seven Segment", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            boxHis.FormattingEnabled = true;
+            boxHis.ItemHeight = 34;
+            boxHis.Location = new Point(476, 41);
+            boxHis.Name = "boxHis";
+            boxHis.Size = new Size(302, 548);
+            boxHis.TabIndex = 4;
+            boxHis.SelectedIndexChanged += boxHis_SelectedIndexChanged;
+            // 
+            // btnHide
+            // 
+            btnHide.ForeColor = SystemColors.ActiveCaptionText;
+            btnHide.Location = new Point(385, 10);
+            btnHide.Name = "btnHide";
+            btnHide.Size = new Size(75, 23);
+            btnHide.TabIndex = 5;
+            btnHide.Text = "btnHide";
+            btnHide.UseVisualStyleBackColor = true;
+            btnHide.Click += btnHide_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
-            ClientSize = new Size(474, 626);
+            ClientSize = new Size(795, 626);
+            Controls.Add(btnHide);
+            Controls.Add(boxHis);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(disp);
             Controls.Add(tableLayoutPanel3);
@@ -520,5 +546,7 @@
         private Button btnDiv;
         private Button btnSqr;
         private Button btnSqrt;
+        private ListBox boxHis;
+        private Button btnHide;
     }
 }
